@@ -11,6 +11,6 @@
         session.setAttribute("username", username);
         response.sendRedirect("orderPizza.jsp");
     } else {
-        out.println("Invalid username or password. Please try again.");
+    	response.sendRedirect("loginFailed.jsp");
     }
 %>
