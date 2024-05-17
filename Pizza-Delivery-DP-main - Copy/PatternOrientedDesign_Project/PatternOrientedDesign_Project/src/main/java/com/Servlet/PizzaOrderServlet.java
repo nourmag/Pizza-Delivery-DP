@@ -37,13 +37,6 @@ public class PizzaOrderServlet extends HttpServlet{
             String ename = request.getParameter("ename");
             
             
-            ToppingPriceCalculator calculator = new ToppingPriceCalculator();
-            float totalToppingPrice = calculator.calculateTotalToppingPrice(toppings);
-            float basePrice = calculator.getPizzaBasePrice(size, crust);
-            float totalPrice = basePrice + totalToppingPrice;
-
-            
-            
             PizzaBuilder builder = new PizzaBuilder().setSize(size).setCrust(crust).setBillId(bill_id).setOrderId(order_id).setTotalPrice(total_price).setPaymentWay(paymentway).setCname(cname).setEname(ename);
             for (String topping : toppings) {
                 builder.addTopping(topping);
